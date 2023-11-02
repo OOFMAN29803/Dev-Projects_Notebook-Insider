@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Notebook Beta</title>
+<link rel="stylesheet" type="text/css" href="stylepid.css">
+</head>
+<body> 
+<div id="maincontainer">
+<input class="input" placeholder="Add the title here..." id="input" maxlength=25></input><p class="output" id="output"></p>
+<center><div id="divtop" class="divtop"><p class="fontp"></p><div class="tools"><button class="open" onclick="opensize()" id="open">Size Options</button><button onclick="openfont()" id="openfont">Font Options</button></div><input class="size" id="sizeinput" maxlength=3>
+</input>
+<div id="buttoncontainer" class="buttoncontainer">
+<button class="numberchooser" onclick="changeFontSize('8px')">8</button>
+<button class="numberchooser" onclick="changeFontSize('12px')">12</button>
+<button class="numberchooser" onclick="changeFontSize('16px')">16</button>
+<button class="numberchooser" onclick="changeFontSize('30px')">30</button>
+<button class="numberchooser" onclick="changeFontSize('40px')">40</button>
+<button class="numberchooser" onclick="changeFontSize('80px')">80</button>
+<button class="numberchooser" onclick="changeFontSize('120px')">120</button>
+</div>
+<input class="font" id="fontinput" placeholder="Font..."></input>
+<div id="fontcontainer" class="fontcontainer">
+<button class="fontchooser" onclick="Tahoma()">Tahoma</button>
+<button class="fontchooser" onclick="NewTimesRoman()">New Times Roman</button>
+<button class="fontchooser" onclick="SansSerif()">Sans Serif</button>
+<button class="fontchooser" onclick="Helvetica()">Helvetica</button>
+<button class="fontchooser" onclick="Impact()">Impact</button>
+<button class="fontchooser" onclick="Trebuchet()">Trebuchet</button>
+<button class="fontchooser" onclick="OpenSans()">Open Sans</button>
+</div>
+
+
+<input class="color" id="colorinput" placeholder="Color..."><button class="downloadbutton" onclick="downloadtxt()" id="1">Download</button></input><button class="button2" id="boldbutton" id="2" onclick="normal()">Bold Font</button><button class="button3" id="alignbutton" onclick="alignleft()">Left Align</button><button class="button2" id="underline" onclick="notunderline()">Underline</button><button id="clear" onclick="cleartextarea()">Clear Page</button><div class="menu" onclick="menu()"></div><div class="pagediv"><p id="page" class="page">Pages: 1</p></div><div id="menuside"><div onclick="closemenu()" class="closecon"><p class="close">X</p></div><p class="undercon">Menu 0.2</p><button class="button2" onclick="newpage()" id="addpage">+ New Page</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button class="button3" onclick="openvivid()" id="optin">VividSpectrum Menu</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button id="lock" onclick="lockpage()">Lock Page</button><button  onclick="importTxtFile()" class="importtxt">import .txt file</button><button onclick="sleep()" id="sleepbutton">Standby</button></div><div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><p class="vivp">VividSpectrum Design Beta 0.3</p><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm" >Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div>
+<div contenteditable="true" class="mainarea" id="textarea"></div>
+</div>
+<center><div id="containstandby" onclick="awake()"><p id="sleep">12:00</p></div></center>
+<script>
+var page = 1
+var underline = 1
+
+</script>
+<script src="main.js"></script>
+<script src="vividspectrum.js"></script>
+
+<script>
+function openvivid() {
+var vividmenu = document.getElementById("vividmenu")
+  if (vividmenu.style.display === "block" || vividmenu.style.display === "") {
+    vividmenu.style.display = "none";
+  } else {
+    vividmenu.style.display = "block";
+  }
+}
+
+function closemenu() {
+  var menuside = document.getElementById("menuside");
+menuside.style.display = "none"
+}
+function closevividmenu() {
+  var vivmenu = document.getElementById("vividmenu");
+vividmenu.style.display = "none"
+}
+
+function openfont() {
+var fontcontainer = document.getElementById("fontcontainer") 
+ if (fontcontainer.style.display === "block" || fontcontainer.style.display === "") {
+    fontcontainer.style.display = "none";
+  } else {
+    fontcontainer.style.display = "block";
+  }
+}
+function opensize() {
+var buttoncontainer = document.getElementById("buttoncontainer") 
+ if (buttoncontainer.style.display === "block" || buttoncontainer.style.display === "") {
+    buttoncontainer.style.display = "none";
+  } else {
+    buttoncontainer.style.display = "block";
+  }
+}
+
+function sleep() {
+var maincontainer = document.getElementById("maincontainer")
+var sleeptime = document.getElementById("sleep")
+var containstandby = document.getElementById("containstandby")
+var textarea = document.querySelectorAll("textarea")
+maincontainer.style.display = "none"
+containstandby.style.display = "block"
+sleeptime.style.display = "block"
+textarea.style.display = "none"
+}
+
+function awake() {
+var maincontainer = document.getElementById("maincontainer")
+var sleeptime = document.getElementById("sleep")
+var containstandby = document.getElementById("containstandby")
+var textarea = document.querySelectorAll("textarea")
+maincontainer.style.display = "block"
+containstandby.style.display = "none"
+sleeptime.style.display = "none"
+textarea.style.display = "block"
+}
+function updateTime() {
+  const currentTime = new Date();
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  document.getElementById("sleep").textContent = formattedTime;
+}
+
+setInterval(updateTime, 1)
+</script>
+<script src="size.js"></script>
+<script src="vividspectrumauto.js"></script>
+</body>
+</html>
