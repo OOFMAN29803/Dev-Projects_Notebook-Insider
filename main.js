@@ -136,20 +136,31 @@ function tts() {
 }
 
 async function importTxtFile() {
-      const file = await new Promise((resolve, reject) => {
+    const file = await new Promise((resolve, reject) => {
         const input = document.createElement('input');
-        const textarea = document.getElementById("textarea")
+        const textarea = document.getElementById("textarea");
         input.type = 'file';
-        input.accept = '.txt';
+        input.accept = '.txt, .png, .jpg, .jpeg, .gif'; // Specify the accepted file types
         input.onchange = () => resolve(input.files[0]);
-input.style.display = "none"        
-document.body.appendChild(input);
+        input.style.display = "none";
+        document.body.appendChild(input);
         input.click();
-      });
+    });
 
-      const content = await file.text();
-      textarea.textContent = content;
+    if (file.type.startsWith('text/')) {
+        // Handle text files
+        const content = await file.text();
+        textarea.textContent = content;
+    } else if (file.type.startsWith('image/')) {
+        // Handle image files
+        const image = document.createElement('img');
+        image.src = URL.createObjectURL(file);
+        textarea.innerHTML = ''; // Clear any existing content
+        textarea.appendChild(image);
+    }
 }
+
+
 window.addEventListener('beforeunload', function() {
   var textarea = document.getElementById("textarea");
   if (textarea.value.trim() !== "") { 

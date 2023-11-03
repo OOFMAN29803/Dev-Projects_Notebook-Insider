@@ -210,7 +210,7 @@ font-size: 25px;
 user-select: none;
 color: white;
 padding: 20px;
-margin-top: -60px;
+margin-top: -50px;
 
 }
 
@@ -460,6 +460,7 @@ height: 30px;
 border-radius: 5px;
 margin-left: 400px;
 color: white;
+margin-top: -40px;
 }
 .closecon2 {
 background-color: red;
@@ -516,4 +517,24 @@ color: white;
 font-weight: 700;
 display: none;
 user-select: none;
+}
+
+.string {
+position: fixed;
+bottom: 2%;
+left: 2%;
+font-size: 13px;
+font-family: Open Sans;
+opacity: 0.2;
+transition: 0.3s ease;
+}
+
+.string:hover {
+opacity: 1;
+}
+
+.about {
+height: 20px;
+margin-right: 460px;
+margin-top: 10px;
 }
