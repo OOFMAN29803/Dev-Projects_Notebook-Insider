@@ -30,11 +30,12 @@
 </div>
 
 
-<input class="color" id="colorinput" placeholder="Color..."><button class="downloadbutton" onclick="downloadtxt()" id="1">Download</button></input><button class="button2" id="boldbutton" id="2" onclick="normal()">Bold Font</button><button class="button3" id="alignbutton" onclick="alignleft()">Left Align</button><button class="button2" id="underline" onclick="notunderline()">Underline</button><button id="clear" onclick="cleartextarea()">Clear Page</button><div class="menu" onclick="menu()"></div><div class="pagediv"><p id="page" class="page">Pages: 1</p></div><div id="menuside"><button onclick="aboutopen()" class="about">About</button><div onclick="closemenu()" class="closecon"><p class="close">X</p></div><p class="undercon">Menu 0.2</p><button class="button2" onclick="newpage()" id="addpage">+ New Page</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button class="button3" onclick="openvivid()" id="optin">VividSpectrum Menu</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button id="lock" onclick="lockpage()">Lock Page</button><button  onclick="importTxtFile()" class="importtxt">import .txt or image file</button><button onclick="sleep()" id="sleepbutton">Standby</button></div><div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><p class="vivp">VividSpectrum Design Beta 0.3</p><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm" >Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div>
+<input class="color" id="colorinput" placeholder="Color..."><button class="downloadbutton" onclick="downloadtxt()" id="1">Download</button></input><button class="button2" id="boldbutton" id="2" onclick="normal()">Bold Font</button><button class="button3" id="alignbutton" onclick="alignleft()">Left Align</button><button class="button2" id="underline" onclick="notunderline()">Underline</button><button id="clear" onclick="cleartextarea()">Clear Page</button><div class="menu" onclick="menu()"></div><div class="pagediv"><p id="page" class="page">Pages: 1</p></div><div id="menuside"><button onclick="aboutopen()" class="about">About</button><div onclick="closemenu()" class="closecon"><p class="close">X</p></div><p class="undercon">Menu 0.2</p><button class="button2" onclick="newpage()" id="addpage">+ New Page</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button class="button3" onclick="openvivid()" id="optin">VividSpectrum Menu</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button id="lock" onclick="lockpage()">Lock Page</button><button  onclick="importTxtFile()" class="importtxt">import .txt or image file</button><button onclick="sleep()" id="sleepbutton">Standby</button></div><div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><p class="vivp">VividSpectrum Design Beta 0.3</p><div class="autocreate"><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><div class="colordemo" id="colordemo"><p id="colordemop" class="colordemop">#0090FF</p></div><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm">Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button></div><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div>
 <div contenteditable="true" class="mainarea" id="textarea"></div>
+<center><div id="versionopen"><p class="firstpart">Notebook Beta</p><p class="secondpart">Insider</p><br><p class="verstring">Version 0.5.3 Build 24.90959 | Insider Build | Not Complete</p><button class="okbutton" onclick="okbutton()">Ok</button></div></center>
 </div>
 <center><div id="containstandby" onclick="awake()"><p id="sleep">12:00</p></div></center>
-<p class="string">Version 0.5.1 Build 21.29738 | Insider Build | Not Complete</p>
+<p class="string">Version 0.5.3 Build 24.90959 | Insider Build | Not Complete</p>
 <script>
 var page = 1
 var underline = 1
@@ -87,7 +88,9 @@ var textarea = document.querySelectorAll("textarea")
 maincontainer.style.display = "none"
 containstandby.style.display = "block"
 sleeptime.style.display = "block"
-textarea.style.display = "none"
+  textareaList.forEach(function(textarea) {
+    textarea.style.display = "none";
+  });
 }
 
 function awake() {
@@ -107,8 +110,29 @@ function updateTime() {
   const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
   document.getElementById("sleep").textContent = formattedTime;
 }
+function aboutopen() {
+var versionopen = document.getElementById("versionopen") 
+ if (versionopen.style.display === "block" || versionopen.style.display === "") {
+    versionopen.style.display = "none";
+  } else {
+    versionopen.style.display = "block";
+  }
+}
 
+function okbutton() {
+var versionopen = document.getElementById("versionopen")
+versionopen.style.display = "none"
+}
 setInterval(updateTime, 1)
+
+function updatecolordemo() {
+var colordemo = document.getElementById("colordemo") 
+var input2 = document.getElementById("input2").value
+var colordemop = document.getElementById("colordemop") 
+colordemo.style.backgroundColor = "#" + input2
+colordemop.textContent = "#" + input2
+}
+setInterval(updatecolordemo, 1000)
 </script>
 <script src="size.js"></script>
 <script src="vividspectrumauto.js"></script>
