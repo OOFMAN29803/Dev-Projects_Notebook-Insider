@@ -228,21 +228,17 @@ bottom: 6%;
 right: 2%;
 width: 200px;
 height: 120px;
-background-image: linear-gradient(to bottom right, pink, #FFDCC0);
 transition: ease 0.3s;
 }
 
-#optin:hover {
-  background-image: linear-gradient(to bottom right, #FFB1BF, #FECEA7);
-}
 
 .vividcontainer {
 position: fixed;
 left: 25%;
-top: 20%;
+top: 15%;
 background-color: grey;
 width: 800px;
-height: 650px;
+height: 700px;
 border: none;
 border-radius: 20px;
 font-family: "Open Sans", Sans-Serif;
@@ -305,9 +301,17 @@ margin-top: 30px;
 }
 
 .vivp {
-margin-top: -50px;
-color: white;
 font-weight: 700;
+background-color: #f7f7f7;
+height: 40px;
+width: 140px;
+color: black;
+transition: 0.3s ease;
+margin-top: -60px;
+margin-left: 30px;
+}
+.vivp:hover {
+background-color: #c3c3c3;
 }
 
 .close2 {
@@ -316,6 +320,7 @@ font-family: Sans-Serif;
 font-weight: 700;
 font-size: 20px;
 user-select: none;
+margin-top: 5px;
 }
 
 #yellow {
@@ -469,6 +474,10 @@ height: 30px;
 border-radius: 5px;
 margin-left: 750px;
 color: white;
+margin-top: 20px;
+}
+.closecon2, .vivp {
+float: left;
 }
 
 .def {
@@ -604,6 +613,7 @@ height: 200px;
 margin-right: 440px;
 background-color: #c7c7c7;
 border-radius: 20px;
+margin-top: 90px;
 }
 
 .colordemo {
@@ -617,4 +627,15 @@ margin-top: 20px;
 .colordemop {
 font-size: 15px;
 margin-top: 10px;
+}
+
+.settingscontainer {
+width: 350px;
+height: 150px;
+background-color: #f7f7f7;
+border-radius: 10px;
+border: none;
+position: fixed;
+top: 30%;
+left: 50%;
 }

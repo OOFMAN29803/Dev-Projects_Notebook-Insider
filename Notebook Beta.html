@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notebook Beta</title>
 <link rel="stylesheet" type="text/css" href="stylepid.css">
 </head>
@@ -9,6 +10,8 @@
 <input class="input" placeholder="Add the title here..." id="input" maxlength=25></input><p class="output" id="output"></p>
 <center><div id="divtop" class="divtop"><p class="fontp"></p><div class="tools"><button class="open" onclick="opensize()" id="open">Size Options</button><button onclick="openfont()" id="openfont">Font Options</button></div><input class="size" id="sizeinput" maxlength=3>
 </input>
+
+
 <div id="buttoncontainer" class="buttoncontainer">
 <button class="numberchooser" onclick="changeFontSize('8px')">8</button>
 <button class="numberchooser" onclick="changeFontSize('12px')">12</button>
@@ -18,6 +21,8 @@
 <button class="numberchooser" onclick="changeFontSize('80px')">80</button>
 <button class="numberchooser" onclick="changeFontSize('120px')">120</button>
 </div>
+
+
 <input class="font" id="fontinput" placeholder="Font..."></input>
 <div id="fontcontainer" class="fontcontainer">
 <button class="fontchooser" onclick="Tahoma()">Tahoma</button>
@@ -30,12 +35,29 @@
 </div>
 
 
-<input class="color" id="colorinput" placeholder="Color..."><button class="downloadbutton" onclick="downloadtxt()" id="1">Download</button></input><button class="button2" id="boldbutton" id="2" onclick="normal()">Bold Font</button><button class="button3" id="alignbutton" onclick="alignleft()">Left Align</button><button class="button2" id="underline" onclick="notunderline()">Underline</button><button id="clear" onclick="cleartextarea()">Clear Page</button><div class="menu" onclick="menu()"></div><div class="pagediv"><p id="page" class="page">Pages: 1</p></div><div id="menuside"><button onclick="aboutopen()" class="about">About</button><div onclick="closemenu()" class="closecon"><p class="close">X</p></div><p class="undercon">Menu 0.2</p><button class="button2" onclick="newpage()" id="addpage">+ New Page</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button class="button3" onclick="openvivid()" id="optin">VividSpectrum Menu</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button id="lock" onclick="lockpage()">Lock Page</button><button  onclick="importTxtFile()" class="importtxt">import .txt or image file</button><button onclick="sleep()" id="sleepbutton">Standby</button></div><div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><p class="vivp">VividSpectrum Design Beta 0.3</p><div class="autocreate"><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><div class="colordemo" id="colordemo"><p id="colordemop" class="colordemop">#0090FF</p></div><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm">Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button></div><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div>
+<input class="color" id="colorinput" placeholder="Color..."><button class="downloadbutton" onclick="downloadtxt()" id="1">Download</button></input><button class="button2" id="boldbutton" id="2" onclick="normal()">Bold Font</button><button class="button3" id="alignbutton" onclick="alignleft()">Left Align</button><button class="button2" id="underline" onclick="notunderline()">Underline</button><button id="clear" onclick="cleartextarea()">Clear Page</button><div class="menu" onclick="menu()"></div>
+
+
+<div class="pagediv"><p id="page" class="page">Pages: 1</p></div>
+
+
+<div id="menuside"><button onclick="aboutopen()" class="about">About</button><div onclick="closemenu()" class="closecon"><p class="close">X</p></div><p class="undercon">Menu</p><button class="button2" onclick="newpage()" id="addpage">+ New Page</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button class="button3" onclick="openvivid()" id="optin">Settings</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button id="lock" onclick="lockpage()">Lock Page</button><button  onclick="importTxtFile()" class="importtxt">import .txt or image file</button><button onclick="sleep()" id="sleepbutton">Standby</button></div>
+
+
+<div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><div id="vividspectrum"><button class="vivp" onclick="menusettings()">Themes</button><div class="settingscontainer" id="settingscontainer"><button class="settingsoption1">[empty]</button></div><div class="autocreate"><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><div class="colordemo" id="colordemo"><p id="colordemop" class="colordemop">#0090FF</p></div><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm">Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button></div><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div></div>
+
+
 <div contenteditable="true" class="mainarea" id="textarea"></div>
-<center><div id="versionopen"><p class="firstpart">Notebook Beta</p><p class="secondpart">Insider</p><br><p class="verstring">Version 0.5.3 Build 24.90959 | Insider Build | Not Complete</p><button class="okbutton" onclick="okbutton()">Ok</button></div></center>
+<center><div id="versionopen"><p class="firstpart">Notebook Beta</p><p class="secondpart">Insider</p><br><p class="verstring">Version 0.5.6 Build 30.4940 | Insider Build | Not Complete</p><button class="okbutton" onclick="okbutton()">Ok</button></div></center>
+
+
 </div>
 <center><div id="containstandby" onclick="awake()"><p id="sleep">12:00</p></div></center>
-<p class="string">Version 0.5.3 Build 24.90959 | Insider Build | Not Complete</p>
+
+
+<p class="string">Version 0.5.6 Build 30.4940 | Insider Build | Not Complete</p>
+
+
 <script>
 var page = 1
 var underline = 1
@@ -130,8 +152,18 @@ var colordemo = document.getElementById("colordemo")
 var input2 = document.getElementById("input2").value
 var colordemop = document.getElementById("colordemop") 
 colordemo.style.backgroundColor = "#" + input2
-colordemop.textContent = "#" + input2
+colordemop.textContent = input2
 }
+
+function menusettings() {
+var settingscontainer = document.getElementById("settingscontainer")
+ if (settingscontainer.style.display === "block" || settingscontainer.style.display === "") {
+    settingscontainer.style.display = "none";
+  } else {
+    settingscontainer.style.display = "block";
+  }
+}
+
 setInterval(updatecolordemo, 1000)
 </script>
 <script src="size.js"></script>
