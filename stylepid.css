@@ -7,7 +7,7 @@ font-family: 'Open Sans', sans-serif;
 }
 
 #textarea {
-width: 70%;
+width: 60%;
 height: 900px;
 padding: 10px;
 border-radius: 10px;
@@ -16,14 +16,13 @@ resize: none;
 background-color: #F7F7F7;
 border: 0px solid;
 shadow: 1px 1px 0px 0px;
-transition: 1s ease;
+transition: 0.6s ease;
 font-size: 20px;
 margin-top: 10px;
-text-align = left;
 overflow: auto;
 }
 #textarea:hover {
-width: 99%;
+width: 84%;
 }
 #textarea:focus {
 width: 99%;
@@ -124,6 +123,9 @@ font-size: 20px;
 border-radius: 7px;
 border: none;
 transition: 0.3s ease;
+padding: 3px;
+background-color: #f7f7f7;
+font-family: open sans;
 }
 
 .input:hover {
@@ -309,9 +311,39 @@ color: black;
 transition: 0.3s ease;
 margin-top: -60px;
 margin-left: 30px;
+
+}
+.vivp2 {
+font-weight: 700;
+background-color: #f7f7f7;
+height: 40px;
+width: 140px;
+color: black;
+transition: 0.3s ease;
+margin-right: 590px;
+margin-bottom: 20px;
+}
+.vivp3 {
+font-weight: 700;
+background-color: #f7f7f7;
+height: 40px;
+width: 140px;
+color: black;
+transition: 0.3s ease;
+margin-right: 590px;
 }
 .vivp:hover {
 background-color: #c3c3c3;
+}
+
+.vivp2:hover {
+background-color: #c3c3c3;
+}
+.vivp3:hover {
+background-color: #c3c3c3;
+}
+vivp, vivp2, vivp3 {
+float: left;
 }
 
 .close2 {
@@ -415,7 +447,7 @@ position: fixed;
 top: 1%;
 left: 45%;
 opacity: 0.2;
-width: 150px;
+width: 200px;
 height: 40px;
 transition: 0.3s ease;
 background-color: white;
@@ -613,7 +645,7 @@ height: 200px;
 margin-right: 440px;
 background-color: #c7c7c7;
 border-radius: 20px;
-margin-top: 90px;
+margin-top: 10px;
 }
 
 .colordemo {
@@ -638,4 +670,20 @@ border: none;
 position: fixed;
 top: 30%;
 left: 50%;
+display: none;
+}
+.settingsoption1 {
+width: 100px;
+height: 100px;
+background-color: #c7c7c7;
+transition: 0.3 ease;
+margin-top: 25px;
+}
+
+.settingsoption1:hover {
+background-color: grey;
+}
+
+#general {
+display: none;
 }

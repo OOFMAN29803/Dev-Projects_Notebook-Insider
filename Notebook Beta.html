@@ -8,7 +8,7 @@
 <body> 
 <div id="maincontainer">
 <input class="input" placeholder="Add the title here..." id="input" maxlength=25></input><p class="output" id="output"></p>
-<center><div id="divtop" class="divtop"><p class="fontp"></p><div class="tools"><button class="open" onclick="opensize()" id="open">Size Options</button><button onclick="openfont()" id="openfont">Font Options</button></div><input class="size" id="sizeinput" maxlength=3>
+<center><div id="divtop" class="divtop"><p class="fontp"></p><div class="tools" id="tools"><button class="open" onclick="opensize()" id="open">Size Options</button><button onclick="openfont()" id="openfont">Font Options</button><button onclick="minimalist()" id="openfont">Close Main Top</button></div><input class="size" id="sizeinput" maxlength=3>
 </input>
 
 
@@ -44,18 +44,18 @@
 <div id="menuside"><button onclick="aboutopen()" class="about">About</button><div onclick="closemenu()" class="closecon"><p class="close">X</p></div><p class="undercon">Menu</p><button class="button2" onclick="newpage()" id="addpage">+ New Page</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button class="button3" onclick="openvivid()" id="optin">Settings</button><button onclick="tts()" id="tts" class="tts">Text to Speech</button><button id="lock" onclick="lockpage()">Lock Page</button><button  onclick="importTxtFile()" class="importtxt">import .txt or image file</button><button onclick="sleep()" id="sleepbutton">Standby</button></div>
 
 
-<div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><div id="vividspectrum"><button class="vivp" onclick="menusettings()">Themes</button><div class="settingscontainer" id="settingscontainer"><button class="settingsoption1">[empty]</button></div><div class="autocreate"><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><div class="colordemo" id="colordemo"><p id="colordemop" class="colordemop">#0090FF</p></div><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm">Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button></div><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div></div>
+<div class="vividcontainer" id="vividmenu"><div class="closecon2" onclick="closevividmenu()"><p class="close2">X</p></div><div id="vividspectrum"><button class="vivp" onclick="menusettings()">Themes</button><br><button class="vivp2" onclick="menugeneral()">General</button><br><button class="vivp3" onclick="menuversion()">Version</button><div class="settingscontainer" id="settingscontainer"><button class="settingsoption1">Version</button><button class="settingsoption1">Themes</button><button class="settingsoption1" onclick="generalsettings()">General</button></div><div class="autocreate"><input placeholder="Enter six digit hex code, no #" id="input2" maxlength=6></input><div class="colordemo" id="colordemo"><p id="colordemop" class="colordemop"></p></div><button class="confirm" onclick="vividspectrumrandomize()">Create</button><button onclick="downloadtheme()" class="confirm">Download</button><button onclick="importThemeFile()" class="confirm" >Upload</button></div><div class="def"><p>Default Colours</p><div class="green" onclick="vividspectrumgreen()"></div><div id="red" onclick="vividspectrumred()"></div><div onclick="vividspectrumpeach()" id="peach"></div><div onclick="vividspectrumblue()" class="blue"></div><div onclick="vividspectrumyellow()" id="yellow"></div><div onclick="vividspectrummagenta()" id="magenta"></div></div></div></div><div id="general"><p>General</p></div></div>
 
 
 <div contenteditable="true" class="mainarea" id="textarea"></div>
-<center><div id="versionopen"><p class="firstpart">Notebook Beta</p><p class="secondpart">Insider</p><br><p class="verstring">Version 0.5.6 Build 30.4940 | Insider Build | Not Complete</p><button class="okbutton" onclick="okbutton()">Ok</button></div></center>
+<center><div id="versionopen"><p class="firstpart">Notebook Beta</p><p class="secondpart">Insider</p><br><p class="verstring">Version 0.5.8 Build 37.2931 | Insider Build | Not Complete</p><button class="okbutton" onclick="okbutton()">Ok</button></div></center>
 
 
 </div>
 <center><div id="containstandby" onclick="awake()"><p id="sleep">12:00</p></div></center>
 
 
-<p class="string">Version 0.5.6 Build 30.4940 | Insider Build | Not Complete</p>
+<p class="string">Version 0.5.8 Build 37.2931 | Insider Build | Not Complete</p>
 
 
 <script>
@@ -163,6 +163,23 @@ var settingscontainer = document.getElementById("settingscontainer")
     settingscontainer.style.display = "block";
   }
 }
+
+function generalsettings() {
+var general = document.getElementById("general")
+general.style.display = "block"
+}
+
+function minimalist() {
+var divtop = document.getElementById("divtop")
+var tools = document.getElementById("tools")
+ if (divtop.style.display === "block" || divtop.style.display === "") {
+    divtop.style.display = "none"
+alert("ctrl + 1 to download file and restart and reimport")
+  } else {
+    divtop.style.display = "block"
+  }
+}
+
 
 setInterval(updatecolordemo, 1000)
 </script>

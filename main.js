@@ -122,7 +122,7 @@ function downloadtxt() {
 }
 
 function tts() {
-  const textareas = document.querySelectorAll("textarea");
+  const textareas = document.querySelectorAll("div#textarea");
   let textToSpeak = '';
   textareas.forEach((textarea) => {
     textToSpeak += textarea.innerHTML + '\n'; 
@@ -191,5 +191,13 @@ function menu() {
     menuside.style.display = "none";
   } else {
     menuside.style.display = "block";
+  }
+}
+function aboutmenu() {
+var versionopen = document.getElementById("versionopen") 
+ if (versionopen.style.display === "block" || versionopen.style.display === "") {
+    versionopen.style.display = "none";
+  } else {
+    versionopen.style.display = "block";
   }
 }
