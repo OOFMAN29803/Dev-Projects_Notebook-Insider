@@ -21,12 +21,6 @@ font-size: 20px;
 margin-top: 10px;
 overflow: auto;
 }
-#textarea:hover {
-width: 84%;
-}
-#textarea:focus {
-width: 99%;
-}
 
 
 .divtop {
@@ -686,4 +680,12 @@ background-color: grey;
 
 #general {
 display: none;
+}
+
+.highlighted {
+background-color: yellow;
+}
+
+.underlined {
+text-decoration: underline;
 }

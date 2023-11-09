@@ -150,7 +150,15 @@ async function importTxtFile() {
     if (file.type.startsWith('text/')) {
         // Handle text files
         const content = await file.text();
-        textarea.textContent = content;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(content, 'text/html');
+
+        // Create a div to hold the content
+        const contentDiv = document.createElement('div');
+        contentDiv.innerHTML = xmlDoc.body.innerHTML;
+
+        textarea.innerHTML = ''; // Clear any existing content
+        textarea.appendChild(contentDiv);
     } else if (file.type.startsWith('image/')) {
         // Handle image files
         const image = document.createElement('img');
@@ -161,9 +169,10 @@ async function importTxtFile() {
 }
 
 
+
 window.addEventListener('beforeunload', function() {
   var textarea = document.getElementById("textarea");
-  if (textarea.value.trim() !== "") { 
+  if (textarea.InnerHTML.trim() !== "") { 
     console.log("Downloading text...");
     downloadtxt();
   }
@@ -201,3 +210,34 @@ var versionopen = document.getElementById("versionopen")
     versionopen.style.display = "block";
   }
 }
+
+    document.getElementById('highlightbutton').addEventListener('click', function () {
+      const contentDiv = document.getElementById('textarea');
+      const selectedText = window.getSelection().toString();
+
+      if (selectedText !== '') {
+        const contentHTML = contentDiv.innerHTML;
+        const highlightedHTML = contentHTML.replace(
+          new RegExp(`(${selectedText})`, 'g'),
+          '<span class="highlighted">$1</span>'
+        );
+
+        contentDiv.innerHTML = highlightedHTML;
+      }
+    });
+
+    document.getElementById('underlinebutton').addEventListener('click', function () {
+      const contentDiv = document.getElementById('textarea');
+      const selectedText = window.getSelection().toString();
+
+      if (selectedText !== '') {
+        const contentHTML = contentDiv.innerHTML;
+        const highlightedHTML = contentHTML.replace(
+          new RegExp(`(${selectedText})`, 'g'),
+          '<span class="underlined">$1</span>'
+        );
+
+        contentDiv.innerHTML = highlightedHTML;
+      }
+    });
+
