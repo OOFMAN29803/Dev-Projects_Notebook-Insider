@@ -210,34 +210,3 @@ var versionopen = document.getElementById("versionopen")
     versionopen.style.display = "block";
   }
 }
-
-    document.getElementById('highlightbutton').addEventListener('click', function () {
-      const contentDiv = document.getElementById('textarea');
-      const selectedText = window.getSelection().toString();
-
-      if (selectedText !== '') {
-        const contentHTML = contentDiv.innerHTML;
-        const highlightedHTML = contentHTML.replace(
-          new RegExp(`(${selectedText})`, 'g'),
-          '<span class="highlighted">$1</span>'
-        );
-
-        contentDiv.innerHTML = highlightedHTML;
-      }
-    });
-
-    document.getElementById('underlinebutton').addEventListener('click', function () {
-      const contentDiv = document.getElementById('textarea');
-      const selectedText = window.getSelection().toString();
-
-      if (selectedText !== '') {
-        const contentHTML = contentDiv.innerHTML;
-        const highlightedHTML = contentHTML.replace(
-          new RegExp(`(${selectedText})`, 'g'),
-          '<span class="underlined">$1</span>'
-        );
-
-        contentDiv.innerHTML = highlightedHTML;
-      }
-    });
-
