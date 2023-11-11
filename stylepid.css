@@ -24,13 +24,14 @@ overflow: auto;
 
 
 .divtop {
-width: 1350px;
+width: 60%;
 height: 60px;
 border: 1px solid #49A3FF;
 border-radius: 30px;
 margin-bottom: 30px;
 margin-top: 20px;
 background-color: #49A3FF;
+overflow: auto;
 }
 
 .size {
@@ -168,35 +169,21 @@ position: fixed;
 right: 1%;
 top: 15%;
 border-radius: 20px;
-width: 450px;
-height: 700px; 
+width: 30%;
+height: 80%; 
 display: none;
 background-color: #49A3FF;
 border: none;
 box-shadow: 2px 2px 2px grey;
-overflow: none;
-max-height: 700px; 
+overflow: auto;
 font-family: "Open Sans", Sans-Serif;
 }
 
 .menu {
-transition: transform 0.3s ease;
-border: 0px solid;
-border-radius: 4px;
-margin-left: 5px;
-transition: ease 0.3s;
-height: 50px;
-margin-top: -50px;
-margin-left: 1250px;
-font-weight: bold;
-background-color: white;
-color: white;
-user-select: none;
-width: 50px;
+
 }
 
 .menu:hover {
-background-color: #F7F7F7;
 }
 
 
@@ -211,19 +198,13 @@ margin-top: -50px;
 }
 
 #addpage {
-position: fixed;
-bottom: 6%;
-right: 16%;
-width: 200px;
-height: 120px;
+
+margin-top: 20px;
 }
 
 #optin {
-position: fixed;
-bottom: 6%;
-right: 2%;
-width: 200px;
-height: 120px;
+margin-top: 20px;
+
 transition: ease 0.3s;
 }
 
@@ -233,8 +214,8 @@ position: fixed;
 left: 25%;
 top: 15%;
 background-color: grey;
-width: 800px;
-height: 700px;
+width: 60%;
+height: 80%;
 border: none;
 border-radius: 20px;
 font-family: "Open Sans", Sans-Serif;
@@ -375,29 +356,19 @@ float: left;
 margin: 20px;
 }
 .importtxt {
-position: fixed;
-bottom: 36%;
-right: 16%;
-width: 200px;
-height: 120px;
+
+margin-top: 20px;
 }
 
 #lock {
-position: fixed;
-bottom: 21%;
-right: 16%;
 transition: 0.3s ease;
-width: 200px;
-height: 120px;
+
+margin-top: 20px;
 }
 
 #tts {
-position: fixed;
-bottom: 21%;
-right: 2%;
 transition: 0.3s ease;
-width: 200px;
-height: 120px;
+
 }
 
 .buttoncontainer {
@@ -498,7 +469,7 @@ background-color: red;
 width: 30px;
 height: 30px;
 border-radius: 5px;
-margin-left: 750px;
+margin-left: 50px;
 color: white;
 margin-top: 20px;
 }
@@ -507,12 +478,13 @@ float: left;
 }
 
 .def {
-max-width: 400px;
+width: 50%;
+height: 40%;
 background-color: #c7c7c7;
 overflow: auto;
 border-radius: 20px;
 margin-top: 20px;
-margin-right: 350px;
+
 }
 
 #input2 {
@@ -526,7 +498,7 @@ background-color: #E1E1E1;
 .confirm {
 width: 80px;
 height: 30px;
-margin-top: 60px;
+margin-top: 20px;
 
 }
 #containstandby {
@@ -540,11 +512,10 @@ left: 0;
 }
 
 #sleepbutton {
-position: fixed;
-bottom: 36%;
-right: 2%;
-width: 200px;
-height: 120px;
+margin-top: 20px;
+transition: 0.3s ease;
+width: 420px;
+height: 60px;
 }
 
 
@@ -634,12 +605,13 @@ height: 25px;
 .autocreate {
 border: none;
 padding: 5px;
-width: 300px;
-height: 200px;
-margin-right: 440px;
+width: 40%;
+height: 30%;
 background-color: #c7c7c7;
 border-radius: 20px;
 margin-top: 10px;
+overflow: auto;
+margin-right: 30px;
 }
 
 .colordemo {
@@ -688,4 +660,30 @@ background-color: yellow;
 
 .underlined {
 text-decoration: underline;
+}
+
+#outerlayer {
+width: 60%;
+height: 40%;
+border: none;
+background-color: grey;
+overflow: auto;
+display: none;
+}
+
+#actualsettings {
+margin-top: 20px;
+transition: 0.3s ease;
+width: 420px;
+height: 60px;
+}
+
+#addpage, #optin, #lock, .importtxt, #tts {
+width: 40%;
+height: 17%;
+}
+
+#actualsettings, #sleepbutton {
+width: 80%;
+height: 8%;
 }
