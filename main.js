@@ -210,3 +210,44 @@ var versionopen = document.getElementById("versionopen")
     versionopen.style.display = "block";
   }
 }
+
+document.getElementById('highlightbutton').addEventListener('click', function () {
+  const contentDiv = document.getElementById('textarea');
+  const selection = window.getSelection();
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+
+  if (selectedText !== '') {
+    const span = document.createElement('span');
+    span.className = 'highlighted';
+    span.textContent = selectedText;
+
+    range.deleteContents();
+    range.insertNode(span);
+  }
+});
+
+document.getElementById('underlinebutton').addEventListener('click', function () {
+  const contentDiv = document.getElementById('textarea');
+  const selection = window.getSelection();
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+
+  if (selectedText !== '') {
+    const span = document.createElement('span');
+    span.className = 'underlined';
+    span.textContent = selectedText;
+
+    range.deleteContents();
+    range.insertNode(span);
+  }
+});
+
+window.addEventListener('beforeunload', function (event) {
+var textarea =  document.getElementById("textarea")
+if (textarea.innerHTML === "") {
+
+} else {
+downloadtxt();
+}
+});
