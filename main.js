@@ -251,3 +251,34 @@ if (textarea.innerHTML === "") {
 downloadtxt();
 }
 });
+
+document.getElementById('italicbutton').addEventListener('click', function () {
+  const contentDiv = document.getElementById('textarea');
+  const selection = window.getSelection();
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+
+  if (selectedText !== '') {
+    const span = document.createElement('span');
+    span.className = 'italic';
+    span.textContent = selectedText;
+
+    range.deleteContents();
+    range.insertNode(span);
+  }
+});
+document.getElementById('boldbutton').addEventListener('click', function () {
+  const contentDiv = document.getElementById('textarea');
+  const selection = window.getSelection();
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+console.log("clicked")
+  if (selectedText !== '') {
+    const span = document.createElement('span');
+    span.className = 'boldstyle';
+    span.textContent = selectedText;
+
+    range.deleteContents();
+    range.insertNode(span);
+  }
+});

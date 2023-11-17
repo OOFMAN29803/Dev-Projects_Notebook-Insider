@@ -50,6 +50,7 @@ width: 30px;
 }
 .size:focus {
 width: 30px;
+outline: none;
 }
 
 .font {
@@ -66,7 +67,7 @@ width: 100px;
 }
 .font:focus {
 width: 100px;
-border: none;
+outline: none;
 }
 
 .color {
@@ -84,7 +85,7 @@ width: 100px;
 }
 .color:focus {
 width: 100px;
-border: none;
+outline: none;
 }
 .output {
 font-family: "Open Sans",Sans-serif;
@@ -128,6 +129,7 @@ width: 300px;
 }
 .input:focus {
 width: 300px;
+outline: none;
 }
 
 
@@ -169,7 +171,7 @@ position: fixed;
 right: 1%;
 top: 15%;
 border-radius: 20px;
-width: 30%;
+width: 40%;
 height: 80%; 
 display: none;
 background-color: #49A3FF;
@@ -686,4 +688,12 @@ height: 17%;
 #actualsettings, #sleepbutton {
 width: 80%;
 height: 8%;
+}
+
+.italic {
+font-style: italic;
+}
+
+.boldstyle {
+font-weight: 700;
 }
