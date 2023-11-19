@@ -38,7 +38,7 @@ overflow: auto;
 width: 20px;
 height: 20px;
 font-size: 15px;
-margin-left: -150px; 
+margin-left: -50px; 
 margin-right: 5px;
 border: 0px solid #CECECE;
 border-radius: 5px;
@@ -696,4 +696,7 @@ font-style: italic;
 
 .boldstyle {
 font-weight: 700;
+}
+.hyperlink {
+color: blue;
 }

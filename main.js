@@ -282,3 +282,19 @@ console.log("clicked")
     range.insertNode(span);
   }
 });
+
+document.getElementById('linkbutton').addEventListener('click', function () {
+  const contentDiv = document.getElementById('textarea');
+  const selection = window.getSelection();
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+console.log("clicked")
+  if (selectedText !== '') {
+    const span = document.createElement('a');
+    span.className = 'hyperlink';
+    span.textContent = selectedText;
+span.href = selectedText;
+    range.deleteContents();
+    range.insertNode(span);
+  }
+});
