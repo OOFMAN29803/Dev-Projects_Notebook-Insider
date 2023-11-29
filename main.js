@@ -136,37 +136,45 @@ function tts() {
 }
 
 async function importTxtFile() {
-    const file = await new Promise((resolve, reject) => {
-        const input = document.createElement('input');
-        const textarea = document.getElementById("textarea");
-        input.type = 'file';
-        input.accept = '.txt, .png, .jpg, .jpeg, .gif'; // Specify the accepted file types
-        input.onchange = () => resolve(input.files[0]);
-        input.style.display = "none";
-        document.body.appendChild(input);
-        input.click();
-    });
+  const file = await new Promise((resolve, reject) => {
+    const input = document.createElement('input');
+    const textarea = document.getElementById('textarea');
+    input.type = 'file';
+    input.accept = '.txt, .png, .jpg, .jpeg, .gif, .mp4, .mov, .avi'; // Add video file types to the accepted file types
+    input.onchange = () => resolve(input.files[0]);
+    input.style.display = 'none';
+    document.body.appendChild(input);
+    input.click();
+  });
 
-    if (file.type.startsWith('text/')) {
-        // Handle text files
-        const content = await file.text();
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(content, 'text/html');
+  if (file.type.startsWith('text/')) {
+    // Handle text files
+    const content = await file.text();
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(content, 'text/html');
 
-        // Create a div to hold the content
-        const contentDiv = document.createElement('div');
-        contentDiv.innerHTML = xmlDoc.body.innerHTML;
+    // Create a div to hold the content
+    const contentDiv = document.createElement('div');
+    contentDiv.innerHTML = xmlDoc.body.innerHTML;
 
-        textarea.innerHTML = ''; // Clear any existing content
-        textarea.appendChild(contentDiv);
-    } else if (file.type.startsWith('image/')) {
-        // Handle image files
-        const image = document.createElement('img');
-        image.src = URL.createObjectURL(file);
-        textarea.innerHTML = ''; // Clear any existing content
-        textarea.appendChild(image);
-    }
+    textarea.innerHTML = ''; // Clear any existing content
+    textarea.appendChild(contentDiv);
+  } else if (file.type.startsWith('image/')) {
+    // Handle image files
+    const image = document.createElement('img');
+    image.src = URL.createObjectURL(file);
+    textarea.innerHTML = ''; // Clear any existing content
+    textarea.appendChild(image);
+  } else if (file.type.startsWith('video/')) {
+    // Handle video files
+    const video = document.createElement('video');
+    video.src = URL.createObjectURL(file);
+    video.controls = true; // Add controls to the video player
+    textarea.innerHTML = ''; // Clear any existing content
+    textarea.appendChild(video);
+  }
 }
+
 
 
 
@@ -267,15 +275,15 @@ document.getElementById('italicbutton').addEventListener('click', function () {
     range.insertNode(span);
   }
 });
-document.getElementById('boldbutton').addEventListener('click', function () {
+document.getElementById('bold').addEventListener('click', function () {
   const contentDiv = document.getElementById('textarea');
   const selection = window.getSelection();
   const range = selection.getRangeAt(0);
   const selectedText = range.toString();
 console.log("clicked")
   if (selectedText !== '') {
-    const span = document.createElement('span');
-    span.className = 'boldstyle';
+    const span = document.createElement('b');
+    span.className = 'noname';
     span.textContent = selectedText;
 
     range.deleteContents();
@@ -298,3 +306,4 @@ span.href = selectedText;
     range.insertNode(span);
   }
 });
+

@@ -13,14 +13,16 @@ padding: 10px;
 border-radius: 10px;
 font-family: Arial;
 resize: none;
-background-color: #F7F7F7;
+background-color: #f7f7f7;
 border: 0px solid;
 shadow: 1px 1px 0px 0px;
-transition: 0.6s ease;
+transition: 0.3s ease;
 font-size: 20px;
 margin-top: 10px;
 overflow: auto;
 }
+
+
 
 
 .divtop {
@@ -697,6 +699,31 @@ font-style: italic;
 .boldstyle {
 font-weight: 700;
 }
-.hyperlink {
-color: blue;
+#hyperlink {
+color: #008AFF;
+text-decoration: underline;
 }
+
+#boldbutton {
+font-weight: 900;
+}
+
+#linkbutton {
+color: blue;
+text-decoration: underline;
+
+}
+#italicbutton {
+font-style: italic;
+}
+#highlightbutton {
+color: black
+}
+#underlinebutton {
+width: 30px;
+text-decoration: underline;
+}
+#highlight {
+background-color: yellow;
+}
+
